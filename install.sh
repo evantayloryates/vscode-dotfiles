@@ -1,3 +1,5 @@
+#!/bin/sh
+
 function gb() {
   # List all branches
   if [ "$1" = "-a" ] || [ "$1" = "--all" ]; then
