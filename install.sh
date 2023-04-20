@@ -43,3 +43,26 @@ function gcm() {
     git push
   fi
 }
+
+function gps() {
+  git push
+}
+
+
+# Append the gb function to the ~/.bashrc file
+echo "# Add the gb function to the command line" >> ~/.bashrc
+echo "function gb() {" >> ~/.bashrc
+echo "  if [ \"\$1\" = \"-a\" ] || [ \"\$1\" = \"--all\" ]; then" >> ~/.bashrc
+echo "    git branch" >> ~/.bashrc
+echo "  elif [ \"\$1\" = \"-c\" ] || [ \"\$1\" = \"--current\" ]; then" >> ~/.bashrc
+echo "    git rev-parse --abbrev-ref HEAD" >> ~/.bashrc
+echo "  else" >> ~/.bashrc
+echo "    git branch | grep -v '^  __'" >> ~/.bashrc
+echo "  fi" >> ~/.bashrc
+echo "}" >> ~/.bashrc
+
+# Source the ~/.bashrc file to make the changes take effect in the current shell session
+source ~/.bashrc
+
+# Print a message to confirm that the function was added to the ~/.bashrc file
+echo "The gb function has been added to the ~/.bashrc file"
