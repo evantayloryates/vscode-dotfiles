@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function gb() {
+gb() {
   # List all branches
   if [ "$1" = "-a" ] || [ "$1" = "--all" ]; then
     git branch
@@ -14,7 +14,7 @@ function gb() {
 }
 
 
-function gcm() {
+gcm() {
   local push=false message="checkpoint"
 
   # Parse command line arguments
@@ -46,7 +46,7 @@ function gcm() {
   fi
 }
 
-function gps() {
+gps() {
   git push
 }
 
@@ -62,9 +62,6 @@ echo "  else" >> ~/.bashrc
 echo "    git branch | grep -v '^  __'" >> ~/.bashrc
 echo "  fi" >> ~/.bashrc
 echo "}" >> ~/.bashrc
-
-# Source the ~/.bashrc file to make the changes take effect in the current shell session
-source ~/.bashrc
 
 # Print a message to confirm that the function was added to the ~/.bashrc file
 echo "The gb function has been added to the ~/.bashrc file"
